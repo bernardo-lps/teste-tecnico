@@ -28,11 +28,11 @@ public class AlunoController {
         alunoService.deletarAluno(id);
     }
 
-    @PostMapping("/importar/{professorId}")
+    @PostMapping("/professor/importar/{professorId}")
     @ResponseStatus(HttpStatus.CREATED)
     public String importarAluno(@RequestParam("arquivo") MultipartFile arquivo, @PathVariable Integer professorId){
         alunoService.importarAluno(arquivo, professorId);
-        return "redirect:/" + professorId + "/alunos"; 
+        return "redirect:/professor/" + professorId + "/alunos"; 
     }
 
 }
