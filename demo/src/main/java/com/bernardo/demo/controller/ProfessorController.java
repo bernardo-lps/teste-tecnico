@@ -18,7 +18,7 @@ import com.bernardo.demo.service.ProfessorService;
 
 @Controller
 @CrossOrigin("*")
-@RequestMapping("/") 
+@RequestMapping("/professor") 
 public class ProfessorController {
 
     @Autowired
@@ -53,7 +53,7 @@ public class ProfessorController {
         return "novo-professor";
     }
 
-    @PostMapping("/novo")
+    @PostMapping("/cadastro")
     public String cadastrarProfessor(@RequestParam String nomeProfessor,
                                      @RequestParam String disciplina) {
         professorService.cadastrarProfessor(new ProfessorRequestDTO(nomeProfessor, disciplina));
